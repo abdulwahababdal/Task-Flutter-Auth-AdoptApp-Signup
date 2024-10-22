@@ -1,6 +1,7 @@
 import 'package:adopt_app/models/user.dart';
 import 'package:adopt_app/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class SignupPage extends StatelessWidget {
@@ -29,11 +30,8 @@ class SignupPage extends StatelessWidget {
               obscureText: true,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text("Sign Up"),
-            ),
-            ElevatedButton(
               onPressed: () {
+                context.pop();
                 Provider.of<AuthProvider>(context, listen: false).signUp(
                     user: User(
                         username: usernameController.text,
